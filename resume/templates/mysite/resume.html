@@ -1,9 +1,0 @@
-{% extends 'base.html' %}
-
-{% block content %}
-
-    {% for name_work in list_resume %}
-        <h1><a href="{% url 'detail_my_work' name_work.id %}">  {{ name_work }} </a></h1>
-    {% endfor %}
-
-{% endblock %}
