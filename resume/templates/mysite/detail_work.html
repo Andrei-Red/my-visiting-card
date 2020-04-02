@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1> {{ id_work }}</h1>
+    {% for one_detail in detail_work %}
+        <p>{{ one_detail.position }}</p>
+        <p>{{ one_detail.responsibilities }}</p>
+        <p>{{ one_detail.started_work }}</p>
+        <p>{{ one_detail.finished_work }}</p>
+    {% endfor %}
+
+{% endblock %}

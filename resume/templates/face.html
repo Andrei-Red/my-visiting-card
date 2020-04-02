@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AndreiDenisenko</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/background.css">
+</head>
+<body>
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <a class="navbar-brand ml-5" href="{% url 'welcome' %}">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link " href="{% url 'project' %}">My last jobs<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link " href="{% url 'project' %}">My projects<span class="sr-only">(current)</span></a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="media ml-5 my-5">
+  <img src="static/image/myfoto.png" class="mr-3" alt="..." width="250">
+  <div class="media-body">
+    <h1 class="text-light mt-5 m-5 " >Hello, my name is Andrei</h1>
+      <h3 class="text-light mt-5 m-5">
+          I'm learning Python and Django this is my project. I'm liking it.
+      </h3>
+  </div>
+</div>
+
+<div class="jumbotron  m-5  p-5">
+  <h2 class="display-5"></h2>
+    {% include 'mysite/myportfolio.html' %}
+</div>
+
+<div class="jumbotron m-5  p-5">
+    {% include 'mysite/contacts.html' %}
+</div>
+
+</body>
+</html>
