@@ -2,12 +2,20 @@
 
 {% block content %}
 
-    <h1> {{ id_work }}</h1>
-    {% for one_detail in detail_work %}
-        <p>{{ one_detail.position }}</p>
-        <p>{{ one_detail.responsibilities }}</p>
-        <p>{{ one_detail.started_work }}</p>
-        <p>{{ one_detail.finished_work }}</p>
-    {% endfor %}
+    <div class="text-light mx-auto m-5 p-5 " style="width: 750px;">
+        <h1> {{ name_work }} </h1>
 
+
+
+    {% for one_detail in detail_work %}
+        <br>
+        <h2> Position: {{ one_detail.position }}</h2>
+        <br>
+        <h4> My responsibilities: </h4>
+        <p>{{ one_detail.responsibilities|linebreaks }}</p>
+        <p> Started - {{ one_detail.started_work|date:"E Y" }}</p>
+        <p> Finished - {{ one_detail.finished_work|date:"E Y" }}</p>
+    {% endfor %}
+    </div>
 {% endblock %}
+

@@ -3,6 +3,7 @@ from django.db import models
 
 class PlaceOfWork(models.Model):
     organization = models.CharField('organization', max_length=100)
+    description = models.TextField('description')
 
     def __str__(self):
         return self.organization

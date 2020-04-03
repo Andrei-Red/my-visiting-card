@@ -1,0 +1,8 @@
+body {
+    background: url(../image/workbg.jpg) fixed;
+    background-size: cover;
+}
+   .semilayer {
+    opacity: 0.7; /* Значение прозрачности */
+   }
+

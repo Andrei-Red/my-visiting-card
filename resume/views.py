@@ -11,14 +11,15 @@ def welcome(request):
 
 def work(request):
     list_resume = PlaceOfWork.objects.all()
+
     return render(request, 'mysite/resume.html', {'list_resume': list_resume})
 
 
 def detail_my_work(request, work_id):
-    id_work = PlaceOfWork.objects.get(id=work_id)
-    detail_work = id_work.detail_set.all()
-    return render(request, 'mysite/detail_work.html', {'detail_work': detail_work, 'id_work': id_work})
+    name_work = PlaceOfWork.objects.get(id=work_id)
+    detail_work = name_work.detail_set.all()
+    return render(request, 'mysite/detail_work.html', {'detail_work': detail_work, 'name_work': name_work})
 
 
 def project(request):
-    return render(request, 'lastprojects.html')
+    return render(request, 'mysite/myprojects.html')

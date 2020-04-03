@@ -2,8 +2,26 @@
 
 {% block content %}
 
+    <div class="text-light mx-auto m-5 p-5" style="width: 750px;">
+        <h1> My last jobs </h1>
+        <h3>I am grateful to them for the experience gained.</h3>
+    </div>
+
     {% for name_work in list_resume %}
-        <h1><a href="{% url 'detail_my_work' name_work.id %}">  {{ name_work }} </a></h1>
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static "css/worktest.css" %}">
+
+        <body>
+            <div class="jumbotron semilayer m-5 mx-auto" style="width: 1000px;">
+              <div class="container">
+                <h1><a href="{% url 'detail_my_work' name_work.id %}">  {{ name_work }} </a></h1>
+                <hr class="my-1">
+              </div>
+                <h5> {{ name_work.description }}   </h5>
+            </div>
+                <br>
+        </body>
     {% endfor %}
 
 {% endblock %}
