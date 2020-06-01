@@ -2,3 +2,7 @@ body {
     background: url(../image/background.jpg) fixed;
     background-size: cover;
 }
+
+.semilayer {
+    opacity: 0.6;
+   }
