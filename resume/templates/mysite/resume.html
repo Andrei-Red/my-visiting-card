@@ -14,44 +14,20 @@
 
     {% for name_work in list_resume %}
 
-        <body>
             <div class="jumbotron semilayer m-5 mx-auto" style="width: 1000px;">
               <div class="container">
-                <h1><a id="aj" href="{% url 'detail_my_work' name_work.id %}">  {{ name_work }} </a></h1>
+                <h1><a class="work-class" id="{{ name_work.id }}" href="{% url 'detail_my_work' name_work.id %}">  {{ name_work }} </a></h1>
                 <hr class="my-1">
               </div>
-                <h5> {{ name_work.description }}   </h5>
+                <h5 > {{ name_work.description }}   </h5>
+                <div id="disc{{ name_work.id }}" class="disc"></div>
             </div>
                 <br>
-        </body>
+
     {% endfor %}
 
-<!--<script>-->
-<!--  $(document).ready(function(){-->
-<!--        $('#aj').bind('click', function(e){-->
-<!--        e.preventDefault();-->
-
-<!--            $.ajax({-->
-<!--                method: 'GET',-->
-<!--                url: $(this).attr('href'),-->
-<!--                data: '',-->
-<!--                dataType: 'text',-->
-
-<!--                success: function(data) {-->
-<!--                    alert("Successfully sent the URL to Django"),-->
-
-<!--                    console.log('ok');-->
-
-<!--                },-->
-<!--                error : function(xhr,errmsg,err) {-->
-<!--                    console.log('error'),-->
-<!--                    // console.log(url),-->
-<!--                    alert("Could not send URL to Django. Error: " + xhr.status + ": " + xhr.responseText);-->
-<!--                }-->
-<!--            })-->
-<!--        })-->
-<!--    })-->
-
-<!--</script>-->
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 
 {% endblock %}
+
+

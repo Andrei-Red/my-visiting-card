@@ -1,6 +1,6 @@
 from django.http import Http404, HttpResponseRedirect,  JsonResponse
 from django.shortcuts import render
-from .models import MyContact, PlaceOfWork
+from .models import MyContact, PlaceOfWork, Detail
 
 
 def welcome(request):
@@ -13,19 +13,16 @@ def work(request):
     return render(request, 'mysite/resume.html', {'list_resume': list_resume})
 
 
-def detail_my_work(request, work_id):
-    name_work = PlaceOfWork.objects.get(id=work_id)
-    detail_work = name_work.detail_set.all()
-    return render(request, 'mysite/detail_work.html', {'detail_work': detail_work, 'name_work': name_work})
-
-
 # def detail_my_work(request, work_id):
 #     name_work = PlaceOfWork.objects.get(id=work_id)
 #     detail_work = name_work.detail_set.all()
-#     ctx = {'elements': list(detail_work)}
-#     print(detail_work)
-#     print(work_id)
-#     return JsonResponse(detail_work)
+#     return render(request, 'mysite/detail_work.html', {'detail_work': detail_work, 'name_work': name_work})
+
+
+def detail_my_work(request, work_id):
+    name_work = PlaceOfWork.objects.get(id=work_id)
+    detail_work = list(name_work.detail_set.all().values())
+    return JsonResponse({'elem': detail_work })
 
 
 def project(request):

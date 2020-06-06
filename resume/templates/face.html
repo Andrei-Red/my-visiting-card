@@ -8,19 +8,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
-      <a class="navbar-brand ml-5" href="{% url 'welcome' %}">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-item nav-link " href="{% url 'work' %}">My last jobs<span class="sr-only">(current)</span></a>
-              <a class="nav-item nav-link " href="{% url 'project' %}">My projects<span class="sr-only">(current)</span></a>
-            </div>
-        </div>
-    </nav>
-
+    {% include 'include/header.html' %}
     <div class="media ml-5 my-5">
       <img src="static/image/myfoto.png" class="mr-3" alt="..." width="250">
       <div class="media-body">

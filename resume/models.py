@@ -19,16 +19,6 @@ class Detail(models.Model):
     def __str__(self):
         return self.position
 
-    def dict(self):
-        obj = {
-            'organization': self.organization,
-            'position': self.position,
-            'responsibilities': self.responsibilities,
-            'started_work': self.started_work,
-            'finished_work': self.finished_work
-        }
-        return obj
-
 
 class MyContact(models.Model):
     email = models.CharField('email', max_length=100)
