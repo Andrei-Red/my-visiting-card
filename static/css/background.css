@@ -6,3 +6,8 @@ body {
 .semilayer {
     opacity: 0.6;
    }
+
+.stretch{
+    width: 1500px;
+    height: auto;
+}

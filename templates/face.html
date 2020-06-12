@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AndreiDenisenko</title>
+    <title>{{ my_obj.name }}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/background.css">
 </head>
@@ -10,29 +10,25 @@
 <body>
     {% include 'include/header.html' %}
     <div class="media ml-5 my-5">
-      <img src="static/image/myfoto.png" class="mr-3" alt="..." width="250">
+      <img src="{{ my_obj.photo.url }}" class="mr-3" alt="..." width="250">
       <div class="media-body">
-        <h1 class="text-light mt-5 m-5 " >Hello, my name is Andrei</h1>
-          <h3 class="text-light mt-5 m-5">
-              I'm learning Python and Django this is my project. I'm liking it.
-          </h3>
+        <h1 class="text-light mt-5 m-5 " >{{ my_obj.salutation }}</h1>
+          <h3 class="text-light mt-5 m-5">{{ my_obj.description }}</h3>
       </div>
     </div>
 
     <div class="jumbotron semilayer m-5  p-5" >
         <h2 class="display-5"></h2>
-        {% include 'mysite/myportfolio.html' %}
+        {% include 'mysite/include_face/myportfolio.html' %}
     </div>
     <br>
 
     <div class="jumbotron semilayer m-5  p-5" >
-        {% include 'mysite/contacts.html' %}
+        {% include 'mysite/include_face/contacts.html' %}
     </div>
     <br>
 
-    <div class="media ml-5 my-5">
-        <img src="static/image/certificate.jpg" class="mr-3" alt="..." width="500">
-    </div>
+   {% include 'mysite/include_face/reward.html' %}
 
 </body>
 </html>

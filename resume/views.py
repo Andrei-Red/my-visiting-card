@@ -1,22 +1,17 @@
-from django.http import Http404, HttpResponseRedirect,  JsonResponse
+from django.http import JsonResponse
 from django.shortcuts import render
-from .models import MyContact, PlaceOfWork, Detail
+from .models import PlaceOfWork, MyInformation
 
 
 def welcome(request):
-    contacts = MyContact.objects.get(id=1)
-    return render(request, 'face.html', {'contacts': contacts})
+    last_id = MyInformation.objects.all().last().id
+    my_obj = MyInformation.objects.get(id=last_id)
+    return render(request, 'face.html', {'my_obj': my_obj})
 
 
 def work(request):
     list_resume = PlaceOfWork.objects.all()
     return render(request, 'mysite/resume.html', {'list_resume': list_resume})
-
-
-# def detail_my_work(request, work_id):
-#     name_work = PlaceOfWork.objects.get(id=work_id)
-#     detail_work = name_work.detail_set.all()
-#     return render(request, 'mysite/detail_work.html', {'detail_work': detail_work, 'name_work': name_work})
 
 
 def detail_my_work(request, work_id):

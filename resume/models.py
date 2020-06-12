@@ -20,6 +20,19 @@ class Detail(models.Model):
         return self.position
 
 
-class MyContact(models.Model):
+class MyInformation(models.Model):
+    name = models.CharField('name', max_length=100)
+    photo = models.ImageField('photo', upload_to='resume/')
+    salutation = models.CharField('salutation', max_length=200)
+    description = models.TextField('description')
     email = models.CharField('email', max_length=100)
     phone = models.CharField('phone', max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
+class Reward(models.Model):
+    reward_img = models.ImageField('reward', upload_to='resume/')
+    description = models.TextField('description', blank=True)
+    person = models.ForeignKey(MyInformation, on_delete=models.CASCADE)

@@ -1,0 +1,10 @@
+{% for reward in my_obj.reward_set.all  %}
+<div class="media ml-5 my-5">
+        <div class="row">
+                <div class="col-5"><img src="{{ reward.reward_img.url }}" class="stretch img-fluid"></div>
+                {% if reward.description %}
+                <div class="col-7 media pr-5"><h5 class="jumbotron semilayer">{{ reward.description }}</h5></div>
+                {% endif %}
+        </div>
+</div>
+{% endfor %}
