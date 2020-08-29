@@ -36,3 +36,13 @@ class Reward(models.Model):
     reward_img = models.ImageField('reward', upload_to='resume/')
     description = models.TextField('description', blank=True)
     person = models.ForeignKey(MyInformation, on_delete=models.CASCADE)
+
+
+class Project(models.Model):
+    name = models.CharField('name', max_length=100)
+    picture = models.ImageField('picture', upload_to='project/')
+    description = models.TextField('description', blank=True)
+    url = models.CharField('url', unique=True, max_length=100)
+
+    def __str__(self):
+        return self.name

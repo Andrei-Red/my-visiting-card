@@ -1,0 +1,40 @@
+body {
+    background: url(../image/background_currencies.jpg) fixed;
+    background-size: cover;
+}
+
+.semilayer {
+    opacity: 0.8;
+   }
+
+.size {
+    width: auto;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+.footersize {
+    background: #100e11;
+    width: auto;
+    margin-bottom: 0px;
+    border: none;
+}
+
+.footerfilling {
+    color: #C0C0C0;
+    background: #100e11;
+    border: none;
+}
+
+.header {
+    opacity: 0.8;
+    background: #292e34;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.headercolor {
+    background: #292e34;
+}

@@ -7,3 +7,23 @@ body {
 .semilayer {
     opacity: 0.7; /* Значение прозрачности */
 }
+
+.blocktext {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.figure {
+ width: 100%; /* Ширина области */
+ height: 400px; /* Высота области */
+ margin: 0; /* Обнуляем отступы */
+ opacity: 0.8;
+}
+
+.blockborder {
+    border: none;
+}

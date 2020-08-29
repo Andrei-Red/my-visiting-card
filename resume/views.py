@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
-from .models import PlaceOfWork, MyInformation
+from .models import PlaceOfWork, MyInformation, Project
+from django.views.generic import ListView
 
 
 def welcome(request):
@@ -9,10 +10,10 @@ def welcome(request):
     return render(request, 'face.html', {'my_obj': my_obj})
 
 
-def work(request):
-    list_resume = PlaceOfWork.objects.all()
-    return render(request, 'mysite/resume.html', {'list_resume': list_resume})
-
+class WorkView(ListView):
+    model = PlaceOfWork
+    context_object_name = 'list_resume'
+    template_name = 'mysite/resume.html'
 
 def detail_my_work(request, work_id):
     name_work = PlaceOfWork.objects.get(id=work_id)
@@ -20,5 +21,9 @@ def detail_my_work(request, work_id):
     return JsonResponse({'elem': detail_work })
 
 
-def project(request):
-    return render(request, 'mysite/myprojects.html')
+class MyProjectDetailView(ListView):
+    model = Project
+    context_object_name = 'projects'
+    template_name = 'mysite/myprojects.html'
+
+

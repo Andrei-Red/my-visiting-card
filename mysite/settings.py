@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'resume',
+    'parsing_currencies',
 
     'django.contrib.admin',
     'django.contrib.auth',

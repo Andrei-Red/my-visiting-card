@@ -1,9 +1,21 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
-<div class="d-flex align-items-center mx-auto m-5 p-5" style="width: 500px;" id="intro">
-    <strong class="text-light"><h1>Work in progress...</h1></strong>
-    <div class="spinner-border text-light ml-auto" role="status" aria-hidden="true"></div>
+<div class="row row-cols-1 row-cols-md-2 m-5 p-5">
+  {% for project in projects %}
+        <a href="{% url 'project' %}{{ project.url }}">
+            <div class="col mb-4">
+                <div class="card blockborder">
+                    <img src="{{ project.picture.url }}" class="card-img-top figure" alt="...">
+                    <h1 class="card-title blocktext">{{ project.name }}</h1>
+                    {% if project.description %}
+                    <div>
+                        <p>{{ project.description }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </a>
+  {% endfor %}
 </div>
 {% endblock %}
